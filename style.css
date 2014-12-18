@@ -1,0 +1,440 @@
+/*-----------------------------------------------------------------------------------
+	Theme Name: Vertikal Child Theme for T2
+	Theme URI: http://preview.themique.com/vertikal
+	Description: Child theme for Vertikal containing changes specific to t2computing.com
+	Author URI: http://www.chadacarino.com
+	Author: Chad A. Carino
+	Template: vertikal
+	Designed by: Horn Partners (www.hornpartners.net) / Chad A. Carino 
+	Version: 1.5
+	Tags: light, gray, white, one-column, two-columns, three-columns, four-columns, right-sidebar, responsive-layout, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, post-formats, sticky-post, theme-options, translation-ready
+	License: MIT
+	Text Domain: vertikal_t2
+-----------------------------------------------------------------------------------*/
+/*
+The MIT License (MIT)
+Copyright (c) 2014 Chad A. Carino
+ 
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+ 
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+ 
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+*/
+
+
+/*-----------------------------------------------------------------------------------
+Main Menu
+-----------------------------------------------------------------------------------*/
+
+.header-logo {
+	padding-top: 35px;
+	padding-bottom: 35px;
+}
+
+.main-menu > li > a:hover:after {
+	width: 0%;
+}
+
+#page-banner {
+	border-bottom: 3px solid #000000;
+}
+
+.content-sections {
+	border-top: 2px solid #e82255;
+	padding-left: 90px;
+	padding-right: 90px;
+}
+
+body.search .content-sections {
+	border-top: 0px;
+}
+
+body.single-post .up-footer {
+	display: none;
+}
+
+.top-line {
+	background-color: #FFFFFF;
+}
+
+.top-line p span:first-child {
+	border-left: 0px;
+}
+
+/*-----------------------------------------------------------------------------------
+All pages
+-----------------------------------------------------------------------------------*/
+
+.ie body #background-container img {
+	margin-left: 0px;
+	left: 0%;
+}
+
+h2, h3 {
+	color: #2b99d4;
+}
+
+#background-container img {
+	top: -28%;
+}
+
+/*-----------------------------------------------------------------------------------
+News pages (Blog Single Entries)
+-----------------------------------------------------------------------------------*/
+
+/* This removes the entry-meta; should be done by replacing the single-entry template instead so that it is not rendered. */
+p.blog-info {
+	display: none;
+}
+
+/*-----------------------------------------------------------------------------------
+Contact Us Page
+-----------------------------------------------------------------------------------*/
+
+div.wpcf7-response-output {
+	float:none;
+}
+
+.contact-us-page .wpcf7 form {
+	padding-top: -20px;
+}
+
+.contact-us-page .wpcf7 .your-message textarea {
+	height: 170px;
+}
+
+.contact-us-page .wpcf7 input.wpcf7-submit {
+	margin-right: 45% !important;
+}
+
+.contact-sidebox {
+	border: 1px solid #e6e6e6;
+	margin-top: 42px;
+	padding: 36px 0px;
+	text-align: center;
+	height: 290px;
+}
+
+.contact-sidebox p {
+	color: #000000;
+}
+
+.contact-sidebox img {
+	width: 180px;
+	margin-bottom: 31px;
+}
+
+/*-----------------------------------------------------------------------------------
+Contact Us Footer
+-----------------------------------------------------------------------------------*/
+
+.contact-footer .wpcf7 .your-message:before {
+	display: block !important;
+}
+
+.contact-footer .wpcf7 .your-message:before {
+	top: 13px;
+	left: 2px;
+	color: #43c0cf;
+}
+
+.contact-footer .wpcf7 input {
+	margin-bottom: -1px !important;
+}
+
+
+.contact-footer .wpcf7 textarea {
+	padding-left: 30px;
+	margin-top: -21px;
+}
+
+.contact-footer .wpcf7 input[type="submit"] {
+	margin: 8px 0 0 !important;
+	color: #43c0cf !important;
+	z-index: 5;
+}
+
+.contact-footer .wpcf7 form p:after {
+	position: relative !important;
+	content: '' !important;
+}
+
+.contact-footer .wpcf7 .form-submit {
+	position: relative;
+	margin: -54px 0 -1px;
+	float: right;
+	transition: all 0.2s ease-in-out;
+}
+
+.contact-footer .wpcf7 .form-submit:before {
+	content: '\f0e0';
+	font-family: 'FontAwesome';
+	font-size: 21px;
+	color: #43c0cf;
+	position: absolute;
+	bottom: .5em;
+	left: 1.75em;
+	transition: all 0.2s ease-in-out;
+}
+
+.contact-footer .wpcf7 .form-submit:hover,
+.contact-footer .wpcf7 .form-submit:hover:before,
+.contact-footer .wpcf7 .form-submit:hover input[type="submit"] {
+	color: #2b99d4;
+}
+
+.contact-footer .wpcf7 .form-submit:hover input[type="submit"] {
+	border-color: #2b99d4;
+}
+
+.up-footer .row .row {
+	margin: 0;
+}
+
+.contact-footer .wpcf7 form .your-message textarea:focus ~
+.contact-footer .wpcf7 form input[type="submit"] {
+	border: 1px solid #2b99d4;
+}
+
+.contact-footer .wpcf7 input[type="submit"]:hover {
+	opacity: 1;
+}
+
+.up-footer .contact-list li a.phone:hover,
+.up-footer .contact-list li a.address:hover {
+	border-color: #2b99d4;
+	cursor: pointer;
+	color: #2b99d4;
+}
+
+.up-footer .contact-list li a.phone:hover i,
+.up-footer .contact-list li a.address:hover i {
+	cursor: pointer;
+	color: #2b99d4;
+}
+
+/*-----------------------------------------------------------------------------------
+Contact List
+-----------------------------------------------------------------------------------*/
+
+ul.contact-list li a.mail i.fa-envelope {
+	margin-right: 1em !important;
+}
+
+}
+
+/*-----------------------------------------------------------------------------------
+Team Members Layout
+-----------------------------------------------------------------------------------*/
+
+.member-col {
+	padding: 20px 0px;
+	border-bottom: 1px solid #dbdbdb;
+}
+
+.member-col:last-child {
+	border-bottom: 0px;
+}
+
+.member-col .member-info {
+	height: auto;
+	padding: 0px;
+	min-height: 11em;
+}
+
+.member-col .member-info .member-name {
+	font-weight: bold;
+	font-size: 15px;
+	display: block;
+}
+
+.member-col .member-info .member-position {
+	display: block;
+	font-size: 13px;
+	line-height: 13px;
+	padding-bottom: 3px;
+}
+
+.member-col .member-info .member-shortbio {
+	display: block;
+	font-size: 12px;
+	line-height: 13px;
+}
+
+.member-col .member-social {
+	position: absolute;
+	bottom: 0px;
+}
+
+.member-col .member-info .member-phone {
+	color: #43c0cf;
+	margin-left: -2px;
+}
+
+.member-col .member-info .fa {
+	color: #43c0cf;
+	border: 1px solid #43c0cf;
+	border-radius: 32px;
+	line-height: 20px;
+	height: 22px;
+	width: 22px;
+	font-size: 13px;
+	text-align: center;
+	margin: 0px 2px;
+}
+
+.member-col .member-info .link:hover {
+	background-color: #43c0cf;
+	color: #ffffff;
+}
+
+.member-col .member-info .member-phone {
+	font-size: 12px;
+}
+
+/*-----------------------------------------------------------------------------------
+Firefox contact footer hack
+-----------------------------------------------------------------------------------*/
+
+@-moz-document url-prefix() {
+
+	.contact-footer .wpcf7 form textarea {
+		float: left;
+	}
+	
+	.contact-footer .wpcf7 form .your-message:after {
+		position: relative;
+		top: 109px;
+		left: 138px;
+	}
+	
+	.contact-footer .wpcf7 form .your-email,
+	.contact-footer .wpcf7 form .your-name {
+		margin-bottom:-2px;
+	}
+	
+}
+
+/*-----------------------------------------------------------------------------------
+Responsive
+-----------------------------------------------------------------------------------*/
+
+@media (min-width: 1920px) {
+
+	.col-sm-5.col-xs-12.member-photo {
+		width: auto;
+	}
+	
+}
+
+@media (min-width: 1400px) {
+
+	.member-col .member-info {
+		min-height: 10em;
+	}
+	
+}
+	
+ @media (max-width: 1200px) {
+ 
+	.member-col .member-info .member-name {
+		font-size: 13px;
+	}
+	
+	.member-col .member-info .member-position {
+		font-size: 10px;
+		font-weight: bold;
+		padding-bottom: 0px;
+		line-height: 11px;
+	}
+	
+	.member-col .member-info .member-shortbio {
+		font-size: 10px;
+		line-height: 10px;
+	}
+	
+	.member-col .member-info .member-social {
+		bottom: -11px;
+	}
+	
+}
+
+@media (max-width: 991px) {
+
+	.member-col .member-info {
+		padding-left: 7px;
+		height: auto;
+		min-height: 12em;
+	}
+	
+	.member-col .member-info .member-name {
+		font-size: 13px;
+	}
+	
+	.member-col .member-info .member-position {
+		font-size: 12px;
+		padding-bottom: 0px;
+	}
+	
+	.member-col .member-info .member-shortbio {
+		font-size: 11px;
+		display: block;
+		text-align: justify;
+		margin: 1em auto;
+	}
+	
+	.member-col .member-info .member-social {
+		bottom: 0px;
+	}
+	
+	.main-menu > li > a.active, .main-menu > li.current-menu-item > a,
+	.main-menu > li.current-menu-parent > a,
+	.main-menu > li.current-menu-ancestor > a,
+	.main-menu > li > a:after {
+		background: #fff;
+	}
+	
+}
+
+@media (max-width: 767px) {
+
+	.member-col {
+		text-align: center;
+	}
+	
+	.member-col .member-photo img {
+		width: 57%;
+	}
+	
+	.member-col .member-info {
+		height: auto;
+		min-height: 2em;
+	}
+	
+	.member-col .member-info .member-name,
+	.member-col .member-info .member-position {
+		font-size: 13px;
+	}
+	
+	.member-col .member-info .member-shortbio {
+		display: block;
+		text-align: justify;
+		margin: 1em auto;
+		font-size: 12px;
+	}
+	
+	.member-col .member-info .member-social {
+		position: relative;
+	}
+	
+	.member-col .member-info .member-social .fa {
+		margin-left: 0px;
+		margin-right: 4px;
+	}
+	
+	.content-sections {
+		padding: 30px 30px 0 !important;
+	}
+	
+}
