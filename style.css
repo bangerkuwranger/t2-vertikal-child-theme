@@ -171,7 +171,6 @@ Contact Us Footer
 }
 
 .contact-footer .wpcf7 .your-message:before {
-	display: block !important;
 	top: 13px;
 	left: 2px;
 	color: #43c0cf;
@@ -212,8 +211,6 @@ Contact Us Footer
 	color: #43c0cf;
 	border: 1px solid #e6e6e6;
 	padding: 11px 12px 11px 52px;
-	margin: 8px 0 0 !important;
-	color: #43c0cf !important;
 	z-index: 5;
 }
 

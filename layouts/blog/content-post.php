@@ -185,8 +185,9 @@
 					}
 				} ?>
 				<h1><?php the_title(); ?></h1>
+<?php
 /*child theme edit*/
-<?php /*
+/*
 				<p class="blog-info"><?php _e('By','vertikal');?> <?php the_author_posts_link(); ?> <?php _e('In','vertikal');?> <?php 
 					$i = 0;
 					// Limit Number of Categories to Show on Page
@@ -199,8 +200,9 @@
 						echo ', . . .';
 					}
 				 ?> <?php _e( 'On' ,'vertikal' );?> <?php echo get_the_date( );?></p>
-*/	?>
-/*end child theme edit*/									
+*/
+/*end child theme edit*/
+?>
 				<hr class="blog-info-divider">
 				<?php the_content();?>
 				<?php

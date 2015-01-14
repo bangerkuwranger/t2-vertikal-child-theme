@@ -43,7 +43,6 @@
 
 .main-menu > li > a, a.elemadded {
     background-color: #2b99d4;
-    background-color: rgba(43,153,212, 0.9);
     color: #ffffff;
 }
 
@@ -81,7 +80,6 @@ footer {
 
 .top-line {
     background-color: #ffffff;
-    background-color: rgba(255,255,255, 0.8);
 }
 
 .top-line p span, .top-line p span a.header-contact-link {
@@ -108,8 +106,8 @@ ul.drop-down li a:hover {
 }
 /* Logo Positioning */
 .header-logo {
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 35px;
+    padding-bottom: 35px;
 }
 /* Banner Area Dynamic Height Control With Padding */
 #page-banner {
