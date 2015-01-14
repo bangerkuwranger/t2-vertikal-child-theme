@@ -33,6 +33,18 @@ Main Menu
 	padding-bottom: 35px;
 }
 
+.main-menu > li > a {
+	background-color: #2b99d4;
+}
+
+.main-menu > li > a.active, .main-menu > li.current-menu-item > a,
+.main-menu > li.current-menu-parent > a,
+.main-menu > li.current-menu-ancestor > a,
+.main-menu > li > a:after {
+	color: #2b99d4;
+	background: rgba(255,255,255,0.8);
+}
+
 .main-menu > li > a:hover:after {
 	width: 0%;
 }
@@ -81,12 +93,15 @@ h2, h3 {
 }
 
 /*-----------------------------------------------------------------------------------
-News pages (Blog Single Entries)
+Our Team Page
 -----------------------------------------------------------------------------------*/
 
-/* This removes the entry-meta; should be done by replacing the single-entry template instead so that it is not rendered. */
-p.blog-info {
-	display: none;
+.skills-progress p span {
+	color: #43c0cf;
+}
+
+.skills-progress .meter span {
+	background-color: #43c0cf;
 }
 
 /*-----------------------------------------------------------------------------------
@@ -101,11 +116,30 @@ div.wpcf7-response-output {
 	padding-top: -20px;
 }
 
+.contact-us-page .wpcf7 p {
+	margin-bottom: -10px;
+}
+
+.contact-us-page .wpcf7 input[type="text"], .contact-us-page .wpcf7 input[type="email"],
+.contact-us-page .wpcf7 input[type="tel"], .contact-us-page .wpcf7 textarea {
+	margin-bottom: 0px;
+}
+
+.contact-us-page .wpcf7 span:before {
+	color: #43c0cf;
+}
+
+.contact-us-page .wpcf7 .your-subject:before {
+	content: '\f075';
+}
+
 .contact-us-page .wpcf7 .your-message textarea {
 	height: 170px;
 }
 
 .contact-us-page .wpcf7 input.wpcf7-submit {
+	background-color: #43c0cf;
+	margin-top: 43px;
 	margin-right: 45% !important;
 }
 
@@ -130,14 +164,27 @@ div.wpcf7-response-output {
 Contact Us Footer
 -----------------------------------------------------------------------------------*/
 
-.contact-footer .wpcf7 .your-message:before {
-	display: block !important;
+.contact-footer .wpcf7 .your-name:before,
+.contact-footer .wpcf7 .your-email:before {
+	display: none;
+	margin-left: 0px;
 }
 
 .contact-footer .wpcf7 .your-message:before {
+	display: block !important;
 	top: 13px;
 	left: 2px;
 	color: #43c0cf;
+}
+
+.contact-footer .wpcf7 br {
+	display: none;
+}
+.contact-footer .wpcf7 input[type="text"],
+.contact-footer .wpcf7 input[type="email"],
+.contact-footer .wpcf7 textarea {
+	padding: 12px;
+	margin-bottom: 0px;
 }
 
 .contact-footer .wpcf7 input {
@@ -150,7 +197,21 @@ Contact Us Footer
 	margin-top: -21px;
 }
 
+.contact-footer .wpcf7 .your-name,
+.contact-footer .wpcf7 .your-email {
+	float: left;
+	width: 50%;
+}
+.contact-footer .wpcf7 textarea {
+	height: 140px;
+}
+
 .contact-footer .wpcf7 input[type="submit"] {
+	margin: 8px 0 0;
+	background-color: #FFFFFF;
+	color: #43c0cf;
+	border: 1px solid #e6e6e6;
+	padding: 11px 12px 11px 52px;
 	margin: 8px 0 0 !important;
 	color: #43c0cf !important;
 	z-index: 5;
@@ -219,10 +280,25 @@ Contact Us Footer
 Contact List
 -----------------------------------------------------------------------------------*/
 
+ul.contact-list li a {
+	width: 90%;
+}
+
+ul.contact-list li a i {
+	color: #43c0cf;
+}
+
 ul.contact-list li a.mail i.fa-envelope {
 	margin-right: 1em !important;
 }
 
+/*-----------------------------------------------------------------------------------
+Footer
+-----------------------------------------------------------------------------------*/
+
+footer > .footer-line > p a, footer > .footer-line > p a:hover, footer > .footer-line > p {
+	color: #FFFFFF;
+	text-decoration: none;
 }
 
 /*-----------------------------------------------------------------------------------
@@ -439,4 +515,4 @@ Responsive
 	}
 	
 }
-//child theme edit
+//end child theme edit
