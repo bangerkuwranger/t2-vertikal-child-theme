@@ -550,7 +550,9 @@ function tmq_vertikal_meta_boxes() {
 					'post_type'   => '',
 					'taxonomy'    => '',
 					'class'       => ''
-				),array(
+				),
+//child theme edit
+				array(
 					'label'	      => __('Short Bio', 'vertikal'),
 					'id'          => 'tmq_membershortbio',
 					'type'        => 'textarea',
@@ -560,7 +562,9 @@ function tmq_vertikal_meta_boxes() {
 					'post_type'   => '',
 					'taxonomy'    => '',
 					'class'       => ''
-				),array(
+				),
+//end child theme edit
+				array(
 					'label'       => __('Facebook Profile', 'vertikal'),
 					'id'          => 'tmq_memberfacebook',
 					'type'        => 'text',

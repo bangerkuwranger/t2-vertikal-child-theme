@@ -533,12 +533,16 @@ function init_ToggleBar () {
 function init_HeaderSearch () {
 	jQuery('.top-line .search_topbar').on('click', function() {
 		if (jQuery('.top-line .search-header-form').hasClass('active') ) {
+			//child theme edit
 			jQuery('.top-line .search-icons').animate({'width': '26px'});
+			//end child theme edit
 			jQuery('.top-line .search-header-form').animate({'width': '0', 'opacity': '0', 'padding-right': '0', 'padding-left': '0', 'margin-right': '-35px'});
 			jQuery('.top-line .search-header-form input').animate({'width': '0'});
 			jQuery('.top-line .search-header-form').removeClass('active');
 		} else {
+//child theme edit
 			jQuery('.top-line .search-icons').animate({'width': '191px'});
+//end child theme edit
 			jQuery('.top-line .search-header-form').animate({'width': '190px', 'opacity': '1', 'padding-right': '10px', 'padding-left': '10px', 'margin-right': '-35px'});
 			jQuery('.top-line .search-header-form input').animate({'width': '160px'});
 			jQuery('.top-line .search-header-form').addClass('active');
