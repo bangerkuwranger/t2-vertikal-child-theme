@@ -4,14 +4,14 @@ t2-vertikal-child-theme
 Child theme of Vertikal for WordPress. Contains specific changes for t2computing.com.
 
 Installation
-=======================
+------------
 1. Install Vertikal theme (http://preview.themique.com/vertikal/demo.html)
 2. Install required plugins as detailed in theme installation guide
 3. Install this child theme by uploading to your 'wp-content/themes/' directory
 4. Replace the plugin 'Vertikal Premium Theme Add-ons' with the version included in this child theme's directory as 'js_vertikal_addons_t2.zip'
 
 Overriding Plugin Functions
-===========================
+---------------------------
 'js_vertikal_addons_t2' is an alternate version of the included plugin that allows you to write your own versions of some of the shortcodes.
 The functions that can be overridden are:
 
