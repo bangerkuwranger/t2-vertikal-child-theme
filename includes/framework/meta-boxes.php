@@ -634,7 +634,20 @@ function tmq_vertikal_meta_boxes() {
 					'post_type'   => '',
 					'taxonomy'    => '',
 					'class'       => ''
+				),
+//child theme edit
+				array(
+					'label'       => 'vCard',
+					'id'          => 'tmq_membervcard',
+					'type'        => 'upload',
+					'desc'        => __('Upload a vCard for this Member', 'vertikal'),
+					'std'         => '',
+					'rows'        => '',
+					'post_type'   => '',
+					'taxonomy'    => '',
+					'class'       => ''
 				)
+//end child theme edit
 			)
 		),
 		array(

@@ -111,7 +111,9 @@
 						$tmq_memberweburl 		=  get_post_meta($post->ID, 'tmq_memberweburl', true);
 						$tmq_memberlinkedin		=  get_post_meta($post->ID, 'tmq_memberlinkedin', true);
 						$tmq_memberphone		=  get_post_meta($post->ID, 'tmq_memberphone', true);
-
+/*child theme edit*/						
+						$tmq_membervcard		= get_post_meta($post->ID, 'tmq_membervcard', true);
+/*end child theme edit*/
 						// Get Post Thumbnail - If it's not empty get values
 						$large_image_url = '';
 						if ( '' != get_the_post_thumbnail() ) {
@@ -214,25 +216,27 @@
 									<span class="member-position">'. $tmq_memberposition .'</span>
 									<p class="member-shortbio">'. $tmq_membershortbio .'</p>
 									<div class="member-social">';
-										if ( !empty( $tmq_memberemailaddress) && $tmq_memberemailaddress != 'none' ) { 										
-											$teammembers .= '<a class="vcard" href="/vcard/'. str_replace("@t2computing.com", "", $tmq_memberemailaddress) .'.vcf"><i class="fa fa-user member-vcard link"></i></a>';
-											$teammembers .= '<a class="email" href="mailto:'. $tmq_memberemailaddress .'"><i class="fa fa-envelope member-mail link"></i></a>';
+										if ( !empty( $tmq_membervcard ) && $tmq_membervcard != 'none' ) { 										
+											$teammembers .= '<a class="vcard" href="'. esc_url($tmq_membervcard) .'"><i class="fa fa-user member-vcard link"></i></a>';
+										}
+										if ( !empty( $tmq_memberemailaddress) && $tmq_memberemailaddress != 'none' && is_email( $tmq_memberemailaddress ) ) { 										
+											$teammembers .= '<a class="email" href="mailto:'. sanitize_email($tmq_memberemailaddress) .'"><i class="fa fa-envelope member-mail link"></i></a>';
 										}
 										if ( !empty( $tmq_memberfacebook) && $tmq_memberfacebook != 'none' ) { 										
-											$teammembers .= '<a class="facebook" href="'. $tmq_memberfacebook .'" target="_blank"><i class="fa fa-facebook link"></i></a>';
+											$teammembers .= '<a class="facebook" href="'. esc_url($tmq_memberfacebook) .'" target="_blank"><i class="fa fa-facebook link"></i></a>';
 										}
 										if ( !empty( $tmq_membertwitter) && $tmq_membertwitter != 'none' ) { 										
-											$teammembers .= '<a class="twitter" href="'. $tmq_membertwitter .'" target="_blank"><i class="fa fa-twitter link"></i></a>';
+											$teammembers .= '<a class="twitter" href="'. esc_url($tmq_membertwitter) .'" target="_blank"><i class="fa fa-twitter link"></i></a>';
 										}
 										if ( !empty( $tmq_membergoogleplus) && $tmq_membergoogleplus != 'none' ) { 										
-											$teammembers .= '<a class="google" href="'. $tmq_membergoogleplus .'" target="_blank"><i class="fa fa-google-plus link"></i></a>';
+											$teammembers .= '<a class="google" href="'. esc_url($tmq_membergoogleplus) .'" target="_blank"><i class="fa fa-google-plus link"></i></a>';
 										}
 										if ( !empty( $tmq_memberlinkedin) && $tmq_memberlinkedin != 'none' ) { 										
-											$teammembers .= '<a class="linkedin" href="'. $tmq_memberlinkedin .'" target="_blank"><i class="fa fa-linkedin link"></i></a>';
+											$teammembers .= '<a class="linkedin" href="'. esc_url($tmq_memberlinkedin) .'" target="_blank"><i class="fa fa-linkedin link"></i></a>';
 										}	
 										if ( !empty( $tmq_memberphone) && $tmq_memberphone != 'none' ) { 										
-											$teammembers .= '<i class="fa fa-phone member-phone-icon link"></i>
-															<span class="member-phone">'. $tmq_memberphone .'</span>';
+											$teammembers .= '<a href="tel:'. $tmq_memberphone .'"><i class="fa fa-phone member-phone-icon link"></i>
+															<span class="member-phone">'. $tmq_memberphone .'</span></a>';
 										}
 									$teammembers .='</div>';
 									$teammembers .='

@@ -1,6 +1,9 @@
 <?php
-// add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
-// function theme_enqueue_styles() {
-//     wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
-//     wp_enqueue_style( 'child-style', get_stylesheet_uri(), array( 'parent-style' ) );
-// }
+//allow vCard uploads in media manager
+add_filter('upload_mimes','add_custom_mime_types');
+function add_custom_mime_types($mimes){
+	return array_merge($mimes,array (
+		'vcf' => 'text/vcard',
+		)
+	);
+}
