@@ -90,6 +90,7 @@ h2, h3 {
 
 #background-container img {
 	top: -28%;
+	max-width: 2400px;
 }
 
 /*-----------------------------------------------------------------------------------
@@ -102,6 +103,10 @@ Our Team Page
 
 .skills-progress .meter span {
 	background-color: #43c0cf;
+}
+
+.staff-box .member-photo img {
+	max-width: 140px !important;
 }
 
 /*-----------------------------------------------------------------------------------
@@ -400,12 +405,22 @@ Responsive
 		width: auto;
 	}
 	
+	
 }
 
 @media (min-width: 1400px) {
 
 	.member-col .member-info {
 		min-height: 10em;
+	}
+	
+}
+
+@media (max-width: 1920px) {
+
+
+	.staff-box .member-photo img {
+		max-width: 100% !important;
 	}
 	
 }

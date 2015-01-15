@@ -7,3 +7,13 @@ function add_custom_mime_types($mimes){
 		)
 	);
 }
+
+if(defined('PICTUREFILL_WP_VERSION') && '2' === substr(PICTUREFILL_WP_VERSION, 0, 1)) {
+	
+	function register_vertikal_srcsets(){
+	  picturefill_wp_register_srcset('full-bg', array('medium', 'large', 'hd-background', 'full'), 'full');
+	}
+
+	add_filter('picturefill_wp_register_srcset', 'register_vertikal_srcsets');
+	
+}

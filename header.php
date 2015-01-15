@@ -6,6 +6,17 @@
  *
  */
 
+// child theme edit
+// retrieves the attachment ID from the file URL
+if( !function_exists( 'pippin_get_image_id' ) ) {
+	function pippin_get_image_id($image_url) {
+		global $wpdb;
+		$attachment = $wpdb->get_col($wpdb->prepare("SELECT ID FROM $wpdb->posts WHERE guid='%s';", $image_url )); 
+			return $attachment[0]; 
+	}
+}
+// child theme edit
+
  /* Theme Options Variables
  * ==================================================
  */
@@ -141,7 +152,25 @@
 		
 		// Apply it
 		if ( !empty( $tmq_backgroundimage ) ) {
-			$tmq_backgroundimage = '<img alt="' . get_bloginfo( 'name' ) . '" src="' . $tmq_backgroundimage . '">';
+// child theme edit
+// 			$tmq_backgroundimage = '<img alt="' . get_bloginfo( 'name' ) . '" src="' . $tmq_backgroundimage . '">';
+			$tmq_backgroundimage_url = get_site_url() . $tmq_backgroundimage;
+			$tmq_backgroundimage_id = pippin_get_image_id( $tmq_backgroundimage );
+			$tmq_backgroundimage_classes = 'alignnone size-full tmq_backgroundimage';
+			if( !empty( $tmq_backgroundimage_id ) ) {
+				$tmq_backgroundimage_classes .= ' wp-image-' . $tmq_backgroundimage_id;
+				if( wp_get_attachment_metadata( $tmq_backgroundimage_id ) ) {
+					$tmq_backgroundimage_dimensions = wp_get_attachment_metadata( $tmq_backgroundimage_id );
+				}
+				else {
+					$tmq_backgroundimage_dimensions = array(
+						'width'		=> '',
+						'height'	=> ''
+					);
+				}
+			}
+			$tmq_backgroundimage = '<img class="' . $tmq_backgroundimage_classes . '" alt="' . get_bloginfo( 'name' ) . '" src="' . $tmq_backgroundimage . '" width="' . $tmq_backgroundimage_dimensions['width'] . '" height="' . $tmq_backgroundimage_dimensions['height'] . '" />';
+// end child theme edit
 		} else {
 			$tmq_backgroundimage = '';
 		}
@@ -286,13 +315,22 @@
 		}
 	?>
 	<?php wp_head();?>
+<!-- child theme edit -->
 	<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico" />
+<!-- end child theme edit -->
 </head>
 <body <?php body_class(); ?>>
 
 	<!-- Background -->
 	<div id="background-container">
-		<?php echo $tmq_backgroundimage . "\n"; ?>
+<!-- child theme edit -->
+		<?php // echo $tmq_backgroundimage . "\n"; ?>
+	<?php if(defined('PICTUREFILL_WP_VERSION') && '2' === substr(PICTUREFILL_WP_VERSION, 0, 1)): ?>
+		<?php echo picturefill_wp_apply_to_html( $tmq_backgroundimage ) . "\n" ?>
+	<?php else: ?>
+		<?php echo $tmq_backgroundimage . "\n" ?>
+	<?php endif ?>
+<!-- end child theme edit -->
 	</div>
 
 	<!-- End Background -->
@@ -312,7 +350,10 @@
 				<ul class="social-icons search-icons<?php echo $tmq_search_header_form_class;?>">
 					<li class="search-header-form">
 						<form class="topbar_searchbox" method="get" action="<?php echo home_url();?>">
+<!-- child theme edit -->
+<!-- 						<input type="search" name="s" placeholder="<?php _e( 'Search and hit Enter!', 'vertikal' );?>"> -->
 							<input type="search" name="s" placeholder="<?php _e( 'Search', 'vertikal' );?>">
+<!-- end child theme edit -->
 						</form>
 					</li>
 					<?php 
