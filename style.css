@@ -40,6 +40,7 @@ Main Menu
 .main-menu > li > a.active, .main-menu > li.current-menu-item > a,
 .main-menu > li.current-menu-parent > a,
 .main-menu > li.current-menu-ancestor > a,
+.main-menu > li.current-page-ancestor > a,
 .main-menu > li > a:after {
 	color: #2b99d4;
 	background: rgba(255,255,255,0.8);
@@ -403,6 +404,7 @@ Responsive
 
 	.col-sm-5.col-xs-12.member-photo {
 		width: auto;
+		max-width: 200px;
 	}
 	
 	
