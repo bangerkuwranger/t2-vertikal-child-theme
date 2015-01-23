@@ -17,6 +17,7 @@ $(document).ready(function($) {
 		init_ToggleBar();
 		init_HeaderSearch();
 		init_responsive_menu();
+		init_copyright_year();
 	} catch(err) {
 		//console.log(err);
 	}
@@ -556,4 +557,11 @@ function tmq_waypoints() {
 	jQuery('.wpb_animate_when_almost_visible').waypoint(function() {
 		jQuery(this).addClass('wpb_start_animation');
 	}, { offset: '85%' });
+}
+
+// Set copyright to current year
+function init_copyright_year() {
+	var $ = jQuery.noConflict();
+	var d = new Date();
+	$( '#copyYear' ).html( d.getFullYear() );	
 }
