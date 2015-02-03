@@ -17,7 +17,10 @@ $(document).ready(function($) {
 		init_ToggleBar();
 		init_HeaderSearch();
 		init_responsive_menu();
+// child theme edit
 		init_copyright_year();
+		wrap_footer_button();
+// end child theme edit
 	} catch(err) {
 		//console.log(err);
 	}
@@ -558,10 +561,22 @@ function tmq_waypoints() {
 		jQuery(this).addClass('wpb_start_animation');
 	}, { offset: '85%' });
 }
-
+// child theme edit
 // Set copyright to current year
 function init_copyright_year() {
 	var $ = jQuery.noConflict();
 	var d = new Date();
 	$( '#copyYear' ).html( d.getFullYear() );	
 }
+
+// wrap footer submit button in span
+function wrap_footer_button() {
+
+	if ( jQuery( '.contact-footer input[type="submit"]' ).length > 0 ) {
+	
+		jQuery( '.contact-footer input[type="submit"]' ).wrap( '<span class="form-submit"></span>' );
+	
+	}
+	
+}
+//end child theme edit
