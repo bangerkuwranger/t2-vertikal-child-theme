@@ -115,9 +115,18 @@ ul.drop-down li a:hover {
 		padding-bottom: 41px;
 	}
 /* Set default font color for all paragraphs */
-	p {
+	p, ul:not([class]) li, ol:not([class]) li {
 		color: #565656;
 	}
+/* Disable Sticky Menu */
+/* 
+	header {
+		position: absolute;
+	}
+	.admin-bar header {
+		top: 45px;
+	}
+ */
 /* Banner Area BG Setting */
 	#page-banner {
 					background: -moz-linear-gradient(left, #666666 0%, #999999 100%);
@@ -130,17 +139,17 @@ ul.drop-down li a:hover {
 	}
 /* Default Paragraph Font Setting */
 	* {
-		font-family: "open sans", "sans serif";
+		font-family: "open sans", "questrial", Helvetica, Arial, sans-serif;
 	}
 
 	p {
-		font-family: "open sans", "sans serif";
+		font-family: "open sans", "questrial", Helvetica, Arial, sans-serif;
 		font-size: 13px;
 		line-height: 22px;
 	}
 /* Menu Font Setting */
 	.main-menu > li > a, .main-menu > li > a span, ul.drop-down li a,  ul.drop-down li a span {
-		font-family: "open sans", "sans serif";
+		font-family: "open sans", Helvetica, Arial, sans-serif;
 	}
 
 	.main-menu > li > a {
@@ -172,6 +181,14 @@ ul.drop-down li a:hover {
 		padding-top: 18px;
 		padding-bottom: 18px;
 	}
+/* 
+	.main-menu > li > a {
+		text-transform: uppercase;
+	}
+	ul.drop-down li a {
+		text-transform: capitalize;
+	} 
+*/
 /* Blog Typography Setting */
 	.news-item h2 {
 		font-size: 18px;
@@ -198,7 +215,7 @@ ul.drop-down li a:hover {
 	}
 /* Headings Font Setting */
 	h1, h2, h3, h4, h5, h6 {
-		font-family: "open sans", "sans serif";
+		font-family: "open sans", "muli", Helvetica, Arial, sans-serif;
 	}
 
 	h1 {

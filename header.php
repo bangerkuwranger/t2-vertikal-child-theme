@@ -51,7 +51,7 @@ if( !function_exists( 'pippin_get_image_id' ) ) {
 		$tmq_email_contact_url = ot_get_option( 'tmq_email_contact_url' );
 		
 		if ( !empty( $tmq_email_contact_url ) && $tmq_email_contact_url != '' ) {
-			$tmq_email_contact_before = '<a href="'. $tmq_email_contact_url .'" class="header-contact-link">';
+			$tmq_email_contact_before = '<a href="'. esc_url($tmq_email_contact_url) .'" class="header-contact-link">';
 			$tmq_email_contact_after = '</a>';
 		} else {
 			$tmq_email_contact_before = '';
@@ -69,7 +69,7 @@ if( !function_exists( 'pippin_get_image_id' ) ) {
 		$tmq_phone_contact_url = ot_get_option( 'tmq_phone_contact_url' );
 		
 		if ( !empty( $tmq_phone_contact_url ) && $tmq_phone_contact_url != '' ) {
-			$tmq_phone_contact_before = '<a href="'. $tmq_phone_contact_url .'" class="header-contact-link">';
+			$tmq_phone_contact_before = '<a href="'. esc_url($tmq_phone_contact_url) .'" class="header-contact-link">';
 			$tmq_phone_contact_after = '</a>';
 		} else {
 			$tmq_phone_contact_before = '';
@@ -119,7 +119,7 @@ if( !function_exists( 'pippin_get_image_id' ) ) {
 				}
 				// Put Social Option into the Variable
 				if ( !empty( $tmq_social_items_url ) && !empty( $tmq_social_title ) ) { 
-					$tmq_social_media_links .= '<li><a class="' . $tmq_social_items_type . '" title="'. $tmq_social_title .'" href="'. $tmq_social_items_url .'" target="_blank"><i class="fa '. $tmq_social_icon .'"></i></a></li>' . "\n";
+					$tmq_social_media_links .= '<li><a class="' . esc_attr($tmq_social_items_type) . '" title="'. esc_attr($tmq_social_title) .'" href="'. esc_url($tmq_social_items_url) .'" target="_blank"><i class="fa '. esc_attr($tmq_social_icon) .'"></i></a></li>' . "\n";
 				}
 			}
 		} else {
@@ -153,7 +153,7 @@ if( !function_exists( 'pippin_get_image_id' ) ) {
 		// Apply it
 		if ( !empty( $tmq_backgroundimage ) ) {
 // child theme edit
-// 			$tmq_backgroundimage = '<img alt="' . get_bloginfo( 'name' ) . '" src="' . $tmq_backgroundimage . '">';
+// 			$tmq_backgroundimage = '<img alt="' . esc_attr(get_bloginfo( 'name' )) . '" src="' . $tmq_backgroundimage . '">';
 			$tmq_backgroundimage_url = get_site_url() . $tmq_backgroundimage;
 			$tmq_backgroundimage_id = pippin_get_image_id( $tmq_backgroundimage );
 			$tmq_backgroundimage_classes = 'alignnone size-full tmq_backgroundimage';
@@ -169,7 +169,7 @@ if( !function_exists( 'pippin_get_image_id' ) ) {
 					);
 				}
 			}
-			$tmq_backgroundimage = '<img class="' . $tmq_backgroundimage_classes . '" alt="' . get_bloginfo( 'name' ) . '" src="' . $tmq_backgroundimage . '" width="' . $tmq_backgroundimage_dimensions['width'] . '" height="' . $tmq_backgroundimage_dimensions['height'] . '" />';
+			$tmq_backgroundimage = '<img class="' . $tmq_backgroundimage_classes . '" alt="' . esc_attr(get_bloginfo( 'name' )) . '" src="' . $tmq_backgroundimage . '" width="' . $tmq_backgroundimage_dimensions['width'] . '" height="' . $tmq_backgroundimage_dimensions['height'] . '" />';
 // end child theme edit
 		} else {
 			$tmq_backgroundimage = '';
@@ -310,7 +310,7 @@ if( !function_exists( 'pippin_get_image_id' ) ) {
 			global $post;
 			$google_headshotlink = get_the_author_meta( 'google_profile', $post->post_author );
 			if ( !empty( $google_headshotlink ) ) {
-				echo '<link rel="author" href="' . $google_headshotlink . '" />' . "\n";
+				echo '<link rel="author" href="' . esc_url($google_headshotlink) . '" />' . "\n";
 			}
 		}
 	?>
@@ -347,9 +347,9 @@ if( !function_exists( 'pippin_get_image_id' ) ) {
 					<span><?php echo $tmq_email_contact_before;?><?php echo $tmq_email_contact; ?><?php echo $tmq_email_contact_after;?></span>
 				</p>
 				
-				<ul class="social-icons search-icons<?php echo $tmq_search_header_form_class;?>">
+				<ul class="social-icons search-icons<?php echo esc_attr($tmq_search_header_form_class) ?>">
 					<li class="search-header-form">
-						<form class="topbar_searchbox" method="get" action="<?php echo home_url();?>">
+						<form class="topbar_searchbox" method="get" action="<?php echo home_url() ?>">
 <!-- child theme edit -->
 <!-- 						<input type="search" name="s" placeholder="<?php _e( 'Search and hit Enter!', 'vertikal' );?>"> -->
 							<input type="search" name="s" placeholder="<?php _e( 'Search', 'vertikal' );?>">
@@ -372,13 +372,13 @@ if( !function_exists( 'pippin_get_image_id' ) ) {
 		    ================================================== -->
 		<header class="clearfix">
 			<div class="header-logo">
-				<a class="logo" title="<?php bloginfo( 'name' ); ?>" href="<?php echo home_url(); ?>"><?php
+				<a class="logo" title="<?php esc_attr(bloginfo( 'name' )) ?>" href="<?php echo home_url() ?>"><?php
 					if ( $tmq_logo_type == 'tmq_text' ) {
 						// Text Logo
 						?><span><?php echo $tmq_logo_text;?></span><?php
 					} else {
 						// Image Logo
-						?><img alt="<?php bloginfo( 'name' ); ?>" src="<?php echo $tmq_logo_url; ?>"><?php
+						?><img alt="<?php esc_attr(bloginfo( 'name' )) ?>" src="<?php echo esc_url($tmq_logo_url) ?>"><?php
 					}				
 				?></a>
 			</div>

@@ -26,6 +26,39 @@ $(document).ready(function($) {
 	}
 });
 
+// Superfish Menu
+//=======================================   
+if((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i)) || (navigator.userAgent.match(/iPad/i)) || (navigator.userAgent.match(/Android/i))) {
+	(function($){ //create closure so we can safely use $ as alias for jQuery
+
+		$(document).ready(function(){
+
+			// initialise plugin
+			var example = $('#header-menu').superfish({
+				//add options here if required
+			});
+
+			// buttons to demonstrate Superfish's public methods
+			$('.destroy').on('click', function(){
+				example.superfish('destroy');
+			});
+
+			$('.init').on('click', function(){
+				example.superfish();
+			});
+
+			$('.open').on('click', function(){
+				example.children('li:first').superfish('show');
+			});
+
+			$('.close').on('click', function(){
+				example.children('li:first').superfish('hide');
+			});
+		});
+
+	})(jQuery);	
+}
+
 jQuery(window).load(function($) {
 	try {
 		tmq_init_centercaro();
@@ -54,12 +87,13 @@ function tmq_init_centercaro() {
 /* Main Script */
 function tmq_init_scripts() {
 	var $ = jQuery.noConflict();
+	
+	$('.phone').tooltip({container: 'body'});
+	
 	/*-------------------------------------------------*/
 	/* =  portfolio isotope
 	/*-------------------------------------------------*/
 
-	$('.phone').tooltip({container: 'body'});
-	
 	var winDow = $(window);
 		// Needed variables
 		var $container=$('.portfolio-container');
@@ -538,6 +572,7 @@ function init_HeaderSearch () {
 	jQuery('.top-line .search_topbar').on('click', function() {
 		if (jQuery('.top-line .search-header-form').hasClass('active') ) {
 			//child theme edit
+// 			jQuery('.search-icons').animate({'width': '26px'});
 			jQuery('.top-line .search-icons').animate({'width': '26px'});
 			//end child theme edit
 			jQuery('.top-line .search-header-form').animate({'width': '0', 'opacity': '0', 'padding-right': '0', 'padding-left': '0', 'margin-right': '-35px'});
@@ -545,6 +580,7 @@ function init_HeaderSearch () {
 			jQuery('.top-line .search-header-form').removeClass('active');
 		} else {
 //child theme edit
+// 			jQuery('.search-icons').animate({'width': '191px'});
 			jQuery('.top-line .search-icons').animate({'width': '191px'});
 //end child theme edit
 			jQuery('.top-line .search-header-form').animate({'width': '190px', 'opacity': '1', 'padding-right': '10px', 'padding-left': '10px', 'margin-right': '-35px'});

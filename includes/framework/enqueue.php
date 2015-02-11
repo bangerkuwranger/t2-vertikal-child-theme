@@ -19,12 +19,16 @@
 		wp_register_script('imagesloaded', get_template_directory_uri() .  '/js/jquery.imagesloaded.min.js', array(), '1.0', true);
 		wp_register_script('style_switcher', get_template_directory_uri() .  '/js/style_switcher.js', array(), '1.0', true);
 		wp_register_script('respond', get_template_directory_uri() .  '/js/respond.min.js', array(), '1.0');
+		wp_register_script('hoverintent', get_template_directory_uri() .  '/js/hoverIntent.js', array(), '1.0');
+		wp_register_script('superfish', get_template_directory_uri() .  '/js/superfish.js', array(), '1.0');
 
 		if (!is_admin()) {
 			// Enqueue Some of Theme Scripts in the Header
 			wp_enqueue_script('jquery');
 			wp_enqueue_script('vertikal_script');
 			wp_enqueue_script('respond');
+			wp_enqueue_script('hoverintent');
+			wp_enqueue_script('superfish');
 			
 			// Footer Scripts
 			wp_enqueue_script('migrate');
