@@ -409,6 +409,78 @@ Blog/News
   display: none;
 }
 
+/*-----------------------------------------------------------------------------------
+Rentals
+-----------------------------------------------------------------------------------*/
+
+#ui-datepicker-div {
+	background: #fff;
+	border: 1px solid #ccc;
+}
+
+.ui-datepicker-next {
+	float: right;
+}
+
+.ui-datepicker-title {
+	text-align: center;
+	font-weight: bold;
+}
+
+.tekserverental-dates h3 {
+	margin: 1em 0 0;
+}
+
+.tekserverentals-show-cart-button-container .button,
+.tekserverentals-cart .button,
+.tekserverentals-item .button,
+.tekserverental-checkout-form .button {
+	margin: 8px 0 0;
+	background-color: #FFFFFF;
+	color: #43c0cf;
+	border: 1px solid #43c0cf;
+	padding: 11px 12px;
+	z-index: 5;
+	display: inline-block;
+	text-align: center;
+}
+
+.tekserverentals-show-cart-button-container .button:hover,
+.tekserverentals-cart .button:hover,
+.tekserverentals-item .button:hover,
+.tekserverental-checkout-form .button:hover {
+	border-color: #2b99d4;
+	color: #2b99d4;
+	text-decoration: none;
+}
+
+.tekserverentals-item .button {
+	padding: .25em .5em;
+	margin: .5em 0;
+	display: block;
+	
+}
+
+.tekserverentals-item .collapseomatic_content {
+	margin: 1em 0 0;
+}
+
+.tekserverentals-item .collapseomatic_content h2 {
+	font-size: 18px;
+	color: #000;
+	text-transform: uppercase;
+}
+
+.tekserverental-checkout-shipping input {
+	margin-bottom: 1em;
+}
+
+.tekserverental-checkout-shipping label {
+	display: block;
+}
+
+
+
 
 /*-----------------------------------------------------------------------------------
 Responsive
